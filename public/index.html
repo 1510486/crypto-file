@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript File Encryption App</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" />
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<link href="assets/css/materialize.min.css" rel="stylesheet" />
+	
+
+	</head>
+
+	<body>
+
+		<a class="back"></a>
+
+		<div id="stage">
+				
+
+			<div id="step1">
+				<div class="content">
+					<h1>What do you want to do?</h1>
+					<a class="waves-effect waves-light btn-large encrypt">
+					<i class="material-icons left">lock_outline</i>Encrypt a file</a>
+
+					<br/>
+					<a class="waves-effect waves-light btn-large decrypt">
+					<i class="material-icons left">lock_open</i>
+						Decrypt a file
+					</a>
+					<br/>
+					<a class="waves-effect waves-light btn-large hash">
+					<i class="material-icons left">functions</i>
+						Hash a file
+					</a>
+
+				</div>
+			</div>
+
+			<div id="step2">
+
+				
+
+				<div class="content if-encrypt">
+					<h1>Choose which file to encrypt</h1>
+					<h2>An encrypted copy of the file will be generated. No data is sent to our server.</h2>
+	
+					      
+					        
+					
+					 <form action="#">
+					    <p>
+					      <label >
+					        <input  class="with-gap" value="aes256" name="group1" type="radio" checked />
+					        <span>AES-256 </span>
+					      </label>
+					 
+					      <label>
+					        <input class="with-gap" value="aes192" name="group1" type="radio" />
+					        <span>AES-192 </span>
+					      </label>
+					
+					      <label>
+					        <input class="with-gap" value="rsa" name="group1" type="radio"  />
+					        <span>RSA </span>
+					      </label>
+					  
+					    </p>
+					  </form>
+
+					<div class="input-field mod">
+						<input id="en-password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+					     
+		
+		
+					<a class="btn-large waves-effect waves-light browse blue">
+						<i class="material-icons left">file_upload</i>
+						Browse
+					</a>
+						<div class="upload-progress">
+						<div class="upload-bar"></div>
+						<div class="upload-percent">0%</div>
+					</div>
+
+					<div id="status"></div>
+					<input type="file" id="encrypt-input" />
+
+				</div>
+
+				<div class="content if-decrypt">
+					<h1>Choose which file to decrypt</h1>
+					<h2>Only files encrypted by this tool are accepted.</h2>
+					<a class="btn-large waves-effect waves-light browse blue">
+						<i class="material-icons left">file_upload</i>
+						Browse
+					</a>
+					<div class="upload-progress">
+					<div class="upload-bar"></div>
+					<div class="upload-percent">0%</div>
+					</div>
+					<div id="upload-status"></div>
+					<input type="file" id="decrypt-input" />
+				</div>
+
+				<div class="content if-hash">
+					<h1>Choose which file to hash</h1>
+					<h2>Only files encrypted by this tool are accepted.</h2>
+					<a class="btn-large waves-effect waves-light browse blue">
+						<i class="material-icons left">file_upload</i>
+						Browse
+					</a>
+					<div class="upload-progress">
+					<div class="upload-bar"></div>
+					<div class="upload-percent">0%</div>
+										</div>
+					<div id="upload-status"></div>
+					<input type="file" id="hash-input" />
+				</div>
+
+			</div>
+
+			<div id="step3">
+
+				<div class="content if-encrypt">
+					<h1>Enter a pass phrase</h1>
+					<h2>This phrase will be used as an encryption key. Write it down or remember it; you won't be able to restore the file without it. </h2>
+
+					<input type="password" />
+					<br/>
+					<a class="btn-large process red">Encrypt!</a>
+				</div>
+
+				<div class="content if-decrypt">
+					<h1>Enter the pass phrase</h1>
+					<h2>Enter the pass phrase that was used to encrypt this file. It is not possible to decrypt it without it.</h2>
+
+					<input type="password" />
+					<a class="btn-large process red">Decrypt!</a>
+				</div>
+
+			</div>
+
+			<div id="step4">
+
+				<div class="content">
+					<h1>Your file is ready!</h1>
+					<a class="btn-large download green">
+						<i class="material-icons left">file_download</i>
+						Download
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+	
+
+	</body>
+
+	<!-- Include the AES algorithm of the crypto library -->
+	<script src="assets/js/aes.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/assets/js/moment.js"></script>
+	<script src="assets/js/mustache.js"></script>
+	<script src="assets/js/materialize.min.js"></script>
+
+	<script src="assets/js/socket.io-file-client.js"></script>
+	<script src="assets/js/jquery-3.1.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+
+</html>

@@ -1,0 +1,297 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+header,
+main,
+footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+	header,
+	main,
+	footer {
+		padding-left: 0;
+	}
+}
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+/* html{
+	overflow:hidden;
+} */
+
+a, a:visited {
+	outline:none;
+	color:#389dc1;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+section, header, aside{
+	display: block;
+}
+
+
+/*-------------------------
+	The main page elements
+--------------------------*/
+
+
+body{
+	font:15px/1.3 'Raleway', sans-serif;
+	color: #fff;
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+}
+
+#stage{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+
+	transition:top 0.4s;
+}
+
+#stage > div{  /* The step divs */
+	height:100%;
+	position:relative;
+}
+
+
+#stage h1{
+	font-weight:normal;
+	font-size:48px;
+	text-align:center;
+	color:#fff;
+	margin-bottom:60px;
+}
+
+#step2 h1,#step3 h1{
+	font-weight: normal;
+	font-size: 48px;
+	text-align: center;
+	color:teal;
+	margin-bottom: 60px;
+}
+
+#stage h2{
+	font-weight: normal;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: -40px 0 45px;
+	font-style: italic;
+}
+
+.content{
+	position:absolute;
+	text-align:center;
+	left:0;
+	top:50%;
+	width:100%;
+}
+
+.content input[type=file]{
+	display:none;
+}
+
+a.back{
+	width: 32px;
+	height: 32px;
+	background: url('../img/icons.svg') no-repeat -192px 0;
+	position: absolute;
+	cursor: pointer;
+	top: 50px;
+	left: 50%;
+	z-index: 10;
+	opacity: 0.8;
+	margin-left: -16px;
+	display:none;
+}
+
+a.back:hover{
+	opacity:1;
+}
+
+
+/*-------------------------
+	Conditional classes
+--------------------------*/
+
+
+[class*="if-"]{
+	display:none;
+}
+
+body.encrypt .if-encrypt{
+	display:block;
+}
+
+body.decrypt .if-decrypt{
+	display:block;
+}
+body.hash .if-hash {
+	display: block;
+}
+
+
+/*-------------------------
+	Button styles
+--------------------------*/
+
+
+.btn-large{
+	width:240px;
+	height:70px;
+	text-align:center;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius:1px;
+	display:block;
+	line-height:70px;
+	box-shadow:3px 3px 0 rgba(0,0,0,0.08);
+	cursor: pointer;
+	margin:10px auto;
+	opacity:0.9;
+}
+
+.button:hover{
+	opacity:1;
+}
+
+
+
+
+/* Styles for specific buttons */
+
+.btn-large.browse {
+	width:180px;
+}
+
+.btn-large.process {
+	width:190px;
+}
+
+.btn-large.download {
+	width:216px;
+}
+
+.btn-large.encrypt::before{
+	background-position: 0 0;
+}
+
+.btn-large.decrypt::before {
+	background-position: -96px 0;
+}
+
+.btn-large.browse::before {
+	background-position: -240px 0;
+}
+
+.btn-large.process::before {
+	background-position: -142px 0;
+}
+
+.btn-large.download:before {
+	background-position:-48px 0;
+}
+
+
+/*-------------------------
+	The steps
+--------------------------*/
+
+
+#step1{
+	background-color:#75c0d1;
+}
+
+body.encrypt #step2{
+	background-color: #fff;
+	color: teal;
+}
+
+body.decrypt #step2{
+	background-color: #fff;
+}
+
+body.hash #step2 {
+	background-color: #fff;
+}
+
+#step3{
+	background-color:#fff;
+}
+
+#step3 input[type=password]{
+	background-color: #fff;
+	border: none;
+	padding: 8px 18px;
+	line-height: 1;
+	font: inherit;
+	display: inline-block;
+	outline: none;
+	width: 400px;
+	margin-bottom: 18px;
+	border-radius: 2px;
+	box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+	font-size: 36px;
+	color: #555;
+}
+
+#step4{
+	background-color:#aa8cd8;
+}
+
+#step1 .content{	margin-top: -140px;}
+#step2 .content{	margin-top:-110px;}
+#step3 .content{	margin-top: -157px;}
+#step4 .content{	margin-top: -100px;}
+
+
+
+
+.upload-progress {
+	position: relative;
+	width: 400px;
+	border: 1px solid #ddd;
+	padding: 1px;
+	border-radius: 3px;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.upload-bar {
+	background-color: #B4F5B4;
+	width: 0%;
+	height: 20px;
+	border-radius: 3px;
+}
+
+.upload-percent {
+	position: absolute;
+	display: inline-block;
+	top: 3px;
+	left: 48%;
+}
+.input-field.mod{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+}
+
+.label{
+	color: #fff;
+}
