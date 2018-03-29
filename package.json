@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.16.3",
     "file-encryptor": "^0.1.1",
-    "node-rsa": "^0.4.2"
+    "node-rsa": "^0.4.2",
+    "socket.io": "^2.0.4",
+    "socket.io-file": "^2.0.2"
   }
 }
